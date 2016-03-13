@@ -1,1 +1,1 @@
-# common_frugal
+# Common module containing common TOs and VOs used in integration module and any other module
