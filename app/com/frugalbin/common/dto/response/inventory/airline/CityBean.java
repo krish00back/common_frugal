@@ -3,23 +3,27 @@ package com.frugalbin.common.dto.response.inventory.airline;
 
 public class CityBean
 {
-	private Long cityId;
+	private String id;
 	private String cityName;
 
-	public CityBean(Long cityId, String cityName)
+	public CityBean()
 	{
-		this.cityId = cityId;
+	}
+	
+	public CityBean(String id, String cityName)
+	{
+		this.id = id;
 		this.cityName = cityName;
 	}
 
-	public Long getCityId()
+	public String getId()
 	{
-		return cityId;
+		return id;
 	}
 
-	public void setCityId(Long cityId)
+	public void setId(String id)
 	{
-		this.cityId = cityId;
+		this.id = id;
 	}
 
 	public String getCityName()
