@@ -2,6 +2,7 @@ package com.frugalbin.common.enums;
 
 public enum Cabins
 {
-	ECONOMY,
-	BUSINESS
+	Economy,
+	Business,
+	Première
 }

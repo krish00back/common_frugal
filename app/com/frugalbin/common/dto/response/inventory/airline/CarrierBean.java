@@ -4,7 +4,7 @@ public class CarrierBean
 {
 	private String id;
 	private String name;
-	private Amenities amenities;
+	private Amenities amenities = new Amenities();
 
 	public CarrierBean()
 	{

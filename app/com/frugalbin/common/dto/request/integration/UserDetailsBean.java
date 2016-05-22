@@ -2,19 +2,30 @@ package com.frugalbin.common.dto.request.integration;
 
 public class UserDetailsBean
 {
-	private String name;
+	private String firstName;
+	private String lastName;
 	private Long userId;
 	private String email;
 	private String phoneno;
 
-	public String getName()
+	public String getFirstName()
 	{
-		return name;
+		return firstName;
 	}
 
-	public void setName(String name)
+	public void setFirstName(String firstName)
 	{
-		this.name = name;
+		this.firstName = firstName;
+	}
+
+	public String getLastName()
+	{
+		return lastName;
+	}
+
+	public void setLastName(String lastName)
+	{
+		this.lastName = lastName;
 	}
 
 	public Long getUserId()

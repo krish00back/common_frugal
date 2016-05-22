@@ -122,4 +122,11 @@ public class FlightSearchResponseBean
 	{
 		this.marketFlights = marketFlights;
 	}
+
+	@Override
+	public String toString()
+	{
+		return "FlightName: " + marketFlights.get(0).getCarrierId() + "departDate: "
+				+ marketFlights.get(0).getDepartTime() + ", arrivalDate: " + marketFlights.get(0).getArrivalTime();
+	}
 }

@@ -2,13 +2,15 @@ package com.frugalbin.common.dto.response.inventory.airline;
 
 import java.util.List;
 
+import com.frugalbin.common.dto.request.inventory.airline.PassengerDetailsBean;
 import com.frugalbin.common.dto.response.udchalo.FaresBean;
 import com.frugalbin.common.dto.response.udchalo.LegBean;
 
-public class Booking
+public class PriceCheckReqBooking
 {
 	private List<LegBean> legs;
 	private FaresBean fare;
+	private List<PassengerDetailsBean> passengers;
 
 	public List<LegBean> getLegs()
 	{
@@ -28,5 +30,15 @@ public class Booking
 	public void setFare(FaresBean fare)
 	{
 		this.fare = fare;
+	}
+
+	public List<PassengerDetailsBean> getPassengers()
+	{
+		return passengers;
+	}
+
+	public void setPassengers(List<PassengerDetailsBean> passengers)
+	{
+		this.passengers = passengers;
 	}
 }

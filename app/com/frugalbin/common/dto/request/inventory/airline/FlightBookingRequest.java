@@ -1,8 +1,19 @@
 package com.frugalbin.common.dto.request.inventory.airline;
 
-public class FlightSearchRequest
+public class FlightBookingRequest
 {
+	private String bookingId;
 	private String requestId;
+
+	public String getBookingId()
+	{
+		return bookingId;
+	}
+
+	public void setBookingId(String bookingId)
+	{
+		this.bookingId = bookingId;
+	}
 
 	public String getRequestId()
 	{
@@ -12,11 +23,5 @@ public class FlightSearchRequest
 	public void setRequestId(String requestId)
 	{
 		this.requestId = requestId;
-	}
-	
-	@Override
-	public String toString()
-	{
-		return "requestId: " + requestId;
 	}
 }

@@ -7,6 +7,7 @@ import com.frugalbin.common.enums.Cabins;
 
 public class SegmentBean
 {
+	private String _id;
 	// CityBean
 	private String origin;
 
@@ -26,6 +27,16 @@ public class SegmentBean
 	private String airline;
 	
 	private int layover;
+
+	public String get_id()
+	{
+		return _id;
+	}
+
+	public void set_id(String _id)
+	{
+		this._id = _id;
+	}
 
 	public String getOrigin()
 	{

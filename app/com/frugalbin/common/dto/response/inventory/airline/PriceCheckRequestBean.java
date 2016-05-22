@@ -3,7 +3,8 @@ package com.frugalbin.common.dto.response.inventory.airline;
 public class PriceCheckRequestBean
 {
 	private String searchId;
-	private Booking booking;
+	private PriceCheckReqBooking booking;
+	private String token;
 
 	public String getSearchId()
 	{
@@ -15,13 +16,23 @@ public class PriceCheckRequestBean
 		this.searchId = searchId;
 	}
 
-	public Booking getBooking()
+	public PriceCheckReqBooking getBooking()
 	{
 		return booking;
 	}
 
-	public void setBooking(Booking booking)
+	public void setBooking(PriceCheckReqBooking booking)
 	{
 		this.booking = booking;
+	}
+
+	public String getToken()
+	{
+		return token;
+	}
+
+	public void setToken(String token)
+	{
+		this.token = token;
 	}
 }

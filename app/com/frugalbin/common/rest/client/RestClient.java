@@ -19,10 +19,10 @@ public class RestClient
 			throw new BusinessException(1001, "Requests other than GET requires reqNode");
 		}
 
-		String finalUrl = getFinalUrl(restClientProtocol, params);
-
-		WSRequestHolder requestHolder = WS.url(finalUrl);
-
+//		String finalUrl = getFinalUrl(restClientProtocol, params);
+//
+//		WSRequestHolder requestHolder = WS.url(finalUrl);
+		WSRequestHolder requestHolder = getFinalUrl(restClientProtocol, params);
 		Promise<Response> res = requestHolder.get();
 
 		return res;
@@ -31,9 +31,9 @@ public class RestClient
 	public static Promise<Response> sendRequest(RestClientProtocolInterface restClientProtocol, JsonNode reqNode,
 			String... params) throws BusinessException
 	{
-		String finalUrl = getFinalUrl(restClientProtocol, params);
-		WSRequestHolder requestHolder = WS.url(finalUrl);
-
+//		String finalUrl = getFinalUrl(restClientProtocol, params);
+//		WSRequestHolder requestHolder = WS.url(finalUrl);
+		WSRequestHolder requestHolder = getFinalUrl(restClientProtocol, params);
 		Promise<Response> res = null;
 		switch (restClientProtocol.getReqType())
 		{
@@ -56,7 +56,7 @@ public class RestClient
 		return sendRequest(restClientProtocol, Json.toJson(reqObject), params);
 	}
 
-	private static String getFinalUrl(RestClientProtocolInterface restClientProtocol, String[] paramsValue)
+	private static WSRequestHolder getFinalUrl(RestClientProtocolInterface restClientProtocol, String[] paramsValue)
 			throws BusinessException
 	{
 		String[] params = restClientProtocol.getParams();
@@ -66,13 +66,14 @@ public class RestClient
 					+ " : req=" + params.length + ", passed=" + paramsValue.length);
 		}
 
-		String finalUrl = restClientProtocol.getUrl();
+		String url = restClientProtocol.getUrl();
+		WSRequestHolder finalUrl = WS.url(url);
 
 		if (params.length > 0)
 		{
 			for (int i = 0; i < params.length && i < paramsValue.length; i++)
 			{
-				finalUrl = finalUrl.replace(params[i], paramsValue[i]);
+				finalUrl = finalUrl.setQueryParameter(params[i], paramsValue[i]);
 			}
 		}
 

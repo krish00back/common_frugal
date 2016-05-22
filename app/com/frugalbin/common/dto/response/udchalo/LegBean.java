@@ -6,7 +6,9 @@ import com.frugalbin.common.enums.Cabins;
 
 public class LegBean
 {
-	private long Id;
+	private String _id;
+	private String id;
+//	private long Id;
 
 	// CityBean
 	private String origin;
@@ -27,9 +29,24 @@ public class LegBean
 
 	private boolean showDetails = false;
 	
-	public long getId()
+	public String get_id()
 	{
-		return Id;
+		return _id;
+	}
+
+	public void set_id(String _id)
+	{
+		this._id = _id;
+	}
+
+	public void setId(String id)
+	{
+		this.id = id;
+	}
+
+	public String getId()
+	{
+		return id;
 	}
 
 	public String getOrigin()
@@ -90,11 +107,6 @@ public class LegBean
 	public void setShowDetails(boolean showDetails)
 	{
 		this.showDetails = showDetails;
-	}
-
-	public void setId(long id)
-	{
-		Id = id;
 	}
 
 	public void setOrigin(String origin)
