@@ -5,7 +5,7 @@ public class PaymentValidationResponse
 	private boolean isValid;
 	private String message;
 
-	public boolean isValid()
+	public boolean getIsValid()
 	{
 		return isValid;
 	}
